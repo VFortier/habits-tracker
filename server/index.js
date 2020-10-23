@@ -1,6 +1,17 @@
-// Import the library
-const server = require('server');
+var express = require('express'),
+  app = express(),
+  port = process.env.PORT || 3000;
 
+var routes = require('./api/routes/testRoute'); //importing route
+routes(app); //register the route
+
+app.listen(port);
+
+console.log('todo list RESTful API server started on: ' + port);
+
+
+
+/*
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -15,5 +26,10 @@ connection.connect((err) => {
   console.log('Connected!');
 });
 
-// Launch the server to always answer "Hello world"
-server(ctx => 'Hello world!');
+connection.query('SELECT name, description FROM goal_type', (err,rows) => {
+  if(err) throw err;
+
+  console.log('Data received from Db:');
+  console.log(rows);
+});
+*/
