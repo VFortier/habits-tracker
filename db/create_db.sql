@@ -11,3 +11,10 @@ CREATE TABLE goal_type (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE user (
+	id            MEDIUMINT NOT NULL AUTO_INCREMENT,
+	email         VARCHAR(254),
+	password      VARCHAR(256),
+	nickname      VARCHAR(40),
+    PRIMARY KEY (id)
+);
