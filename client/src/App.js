@@ -1,17 +1,28 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-import Header from './Header';
-import Body from './Body';
+import Frontpage from './Frontpage/Frontpage';
+import HabitsTracker from './HabitsTracker/HabitsTracker';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App" class="bg-dark text-light">
-      <Header></Header>
-      <Body></Body>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/habits-tracker">
+            <HabitsTracker />
+          </Route>
+          <Route path="/">
+            <Frontpage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
