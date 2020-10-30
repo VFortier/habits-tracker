@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+
+import LoginForm from './LoginForm';
 
 class HabitsTracker extends Component {
-  state = {
-    response: "No response"
-  };
-  
+  /* TODO - Delete me - dummy request
   componentDidMount() {
     axios.get('/user/dummy@user.com').then((res) => {
       const response = res.data.email;
       this.setState({response});
     });
-  }
+  }*/
 
   render() {
     return (
       <div className="HabitsTracker">
-        <h1>Hello from the frontend!</h1>
-        <h1>{this.state.response}</h1>
+        <h1>Habits Tracker Login</h1>
+        <LoginForm></LoginForm>
       </div>
     );
   }
