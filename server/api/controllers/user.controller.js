@@ -14,15 +14,14 @@ exports.signup = function(req, res) {
 };
 
 exports.login = function(req, res) {
-  console.log(req);
-  User.login(req.query.email, req.query.password, (err) => {
+  User.login(req.body.email, req.body.password, (err) => {
     if (err) {
       if (err.kind === "unauthorized") {
         res.setHeader('WWW-Authenticate', 'Invalid credentials');
         res.status(401).send();
       } else {
         res.status(500).send({
-          message: `Error logging in User with email ${req.params.email}.`
+          message: `Error logging in User with email ${req.body.email}.`
         });
       }
     } else {

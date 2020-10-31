@@ -36,15 +36,16 @@ User.add = (email, password, nickname, result) => {
 //TODO - Move some of this code to controller so our model is more "pure"
 User.login = (email, password, result) => {
   //TODO - Properly hash password before comparing against the DB
-  let encPassword = db.escape(password);
   let escEmail = db.escape(email);
+  let encPassword = db.escape(password);
 
   let query = `
     SELECT *
     FROM user
-    WHERE email = "${escEmail}"
-      AND password = "${encPassword}"
+    WHERE email = ${escEmail}
+      AND password = ${encPassword}
   `;
+  console.log(query);
 
   db.query(query, (err, res) => {
     if (err) {
