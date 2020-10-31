@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
     let password = this.state.password;
 
     axios
-      .post("/auth/login", {
+      .post("/user/login", {
         email,
         password
       })

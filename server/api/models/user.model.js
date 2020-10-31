@@ -7,6 +7,27 @@ const User = function(user) {
   this.nickname = user.nickname;
 };
 
+User.login = (email, password, result) => {
+  //TODO - Properly hash password before comparing against the DB
+  let encPassword = password;
+
+  db.query(`SELECT * FROM user WHERE email = "${email}" and password = "${encPassword}"`, (err, res) => {
+    if (err) {
+      console.log("Error: ", err);
+      result(err);
+      return;
+    }
+
+    if (res.length) {
+      console.log("Authorized user: ", res[0]);
+      result();
+      return;
+    }
+
+    result({ kind: "unauthorized" });
+  });
+};
+
 User.findByEmail = (email, result) => {
   db.query(`SELECT * FROM user WHERE email = "${email}"`, (err, res) => {
     if (err) {
