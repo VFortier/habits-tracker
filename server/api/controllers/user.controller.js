@@ -14,9 +14,11 @@ exports.signup = function(req, res) {
 };
 
 exports.login = function(req, res) {
-  User.login(req.body.email, req.body.password, (err) => {
+  let hashedPwd = req.body.password;
+
+  User.findByEmailAndPwd(req.body.email, hashedPwd, (err, data) => {
     if (err) {
-      if (err.kind === "unauthorized") {
+      if (err.kind === "not_found") {
         res.setHeader('WWW-Authenticate', 'Invalid credentials');
         res.status(401).send();
       } else {

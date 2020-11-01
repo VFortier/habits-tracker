@@ -33,9 +33,7 @@ User.add = (email, password, nickname, result) => {
   });
 };
 
-//TODO - Move some of this code to controller so our model is more "pure"
-User.login = (email, password, result) => {
-  //TODO - Properly hash password before comparing against the DB
+User.findByEmailAndPwd = (email, password, result) => {
   let escEmail = db.escape(email);
   let encPassword = db.escape(password);
 
@@ -45,7 +43,6 @@ User.login = (email, password, result) => {
     WHERE email = ${escEmail}
       AND password = ${encPassword}
   `;
-  console.log(query);
 
   db.query(query, (err, res) => {
     if (err) {
@@ -55,12 +52,12 @@ User.login = (email, password, result) => {
     }
 
     if (res.length) {
-      console.log("Authorized user: ", res[0]);
-      result();
+      console.log("Found user: ", res[0]);
+      result(null, res[0]);
       return;
     }
 
-    result({ kind: "unauthorized" });
+    result({ kind: "not_found" });
   });
 };
 
