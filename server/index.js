@@ -1,8 +1,7 @@
 const express = require('express'),
-  app = express(),
-  port = process.env.PORT || 5000;
-
-var routes = require('./api/routes/user.routes.js'); //importing route
+      app     = express(),
+      port    = process.env.PORT || 5000;
+const routes  = require('./api/routes/user.routes.js'); //importing route
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());

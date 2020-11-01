@@ -1,8 +1,6 @@
-const db = require("./db.js");
-
-//TODO - All "require variable" should be constants
-var jwt = require("jsonwebtoken");
-var bcrypt = require("bcryptjs");
+const db     = require("./db.js");
+const jwt    = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const User = function(user) {
   this.id = user.id;
