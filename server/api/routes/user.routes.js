@@ -6,7 +6,4 @@ module.exports = function(app) {
 
   app.route('/user/login')
     .post(userController.login);
-
-  app.route('/user/:email')
-    .get(userController.findUserByEmail);
 };
