@@ -1,14 +1,33 @@
 const User = require("../models/user.model.js");
 
 exports.signup = function(req, res) {
-  User.add(req.query.email, req.query.password, req.query.nickname, (err, data) => {
-    if (err) {
-      res.status(500).send({
-        message: `Error signing up in User`
+  let email    = req.body.email, 
+      pwd      = req.body.password, 
+      nickname = req.body.nickname;
+
+  if (!email || !pwd || !nickname) {
+    res.status(400).send({
+      message: `Request body is missing one or more parameter(s)`
+    });
+    return;
+  }
+
+  User.findByEmail(email, (err, data) => {
+    if (data != null) {
+      res.status(400).send({
+        message: `A user with the email '${email}' already exists`
       });
     } else {
-      console.log(data);
-      res.send();
+      User.add(email, pwd, nickname, (err, data) => {
+        if (err) {
+          res.status(500).send({
+            message: `Error signing up in User`
+          });
+        } else {
+          console.log(data);
+          res.send();
+        }
+      });
     }
   });
 };

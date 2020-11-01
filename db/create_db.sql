@@ -13,7 +13,7 @@ CREATE TABLE goal_type (
 
 CREATE TABLE user (
 	id            MEDIUMINT NOT NULL AUTO_INCREMENT,
-	email         VARCHAR(254)  NOT NULL,
+	email         VARCHAR(254)  NOT NULL UNIQUE,
 	password      VARCHAR(256)  NOT NULL,
 	nickname      VARCHAR(40)  NOT NULL,
     PRIMARY KEY (id)
