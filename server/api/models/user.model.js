@@ -1,6 +1,4 @@
-const db     = require("./db.js");
-const jwt    = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+const db = require("./db.js");
 
 const User = function(user) {
   this.id = user.id;
@@ -31,34 +29,6 @@ User.add = (email, password, nickname, result) => {
   });
 };
 
-User.findByEmailAndPwd = (email, password, result) => {
-  let escEmail = db.escape(email);
-  let encPassword = db.escape(password);
-
-  let query = `
-    SELECT *
-    FROM user
-    WHERE email = ${escEmail}
-      AND password = ${encPassword}
-  `;
-
-  db.query(query, (err, res) => {
-    if (err) {
-      console.log("Error: ", err);
-      result(err);
-      return;
-    }
-
-    if (res.length) {
-      console.log("Found user: ", res[0]);
-      result(null, res[0]);
-      return;
-    }
-
-    result({ kind: "not_found" });
-  });
-};
-
 User.findByEmail = (email, result) => {
   let escEmail = db.escape(email);
 
@@ -70,7 +40,6 @@ User.findByEmail = (email, result) => {
     }
 
     if (res.length) {
-      console.log("found user: ", res[0]);
       result(null, res[0]);
       return;
     }
