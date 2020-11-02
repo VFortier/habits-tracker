@@ -1,7 +1,7 @@
-const User   = require("../models/user.model.js");
-const jwt    = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
+const User = require("../models/user.model.js");
 const authConfig = require("../../config/auth.config");
 
 exports.signup = function(req, res) {
@@ -72,4 +72,8 @@ exports.login = function(req, res) {
       });
     }
   });
+};
+
+exports.dummyAuthenticatedEndpoint = function(req, res) {
+  res.send({message: `You are authenticated with user id ${req.userId}`});
 };
