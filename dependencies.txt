@@ -1,0 +1,1 @@
+karate-0.9.6.zip (https://dl.bintray.com/ptrthomas/karate/)
