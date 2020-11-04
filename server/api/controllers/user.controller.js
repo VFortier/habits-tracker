@@ -5,6 +5,8 @@ const User = require("../models/user.model.js");
 const authConfig = require("../../config/auth.config");
 
 exports.signup = function(req, res) {
+  console.log("--->/user/signup");
+
   let email    = req.body.email, 
       pwd      = req.body.password, 
       nickname = req.body.nickname;
@@ -38,6 +40,8 @@ exports.signup = function(req, res) {
 };
 
 exports.login = function(req, res) {
+  console.log("--->/user/login");
+  
   User.findByEmail(req.body.email, (err, user) => {
     if (err) {
       if (err.kind === "not_found") {

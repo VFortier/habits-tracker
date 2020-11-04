@@ -1,46 +1,35 @@
-Feature: sample karate test script
-  for help, see: https://github.com/intuit/karate/wiki/IDE-Support
+Feature: Signing in a new user
 
   Background:
-    * url 'https://jsonplaceholder.typicode.com'
+    * url 'http://localhost:5000'
 
-  Scenario: get all users and then get the first user by id
-    Given path 'users'
-    When method get
-    Then status 200
-
-    * def first = response[0]
-
-    Given path 'users', first.id
-    When method get
-    Then status 200
-
-  Scenario: create a user and then get it by id
-    * def user =
+  Scenario: Sign in new user and log him in
+    * def now = function(){ return java.lang.System.currentTimeMillis() }
+    * def username = 'Test-' + now()
+    * def email = username + '@test.com'
+    * def signinReq =
       """
       {
-        "name": "Test User",
-        "username": "testuser",
-        "email": "test@user.com",
-        "address": {
-          "street": "Has No Name",
-          "suite": "Apt. 123",
-          "city": "Electri",
-          "zipcode": "54321-6789"
-        }
+        "email" : "#(email)",
+        "password" : "Testing123",
+        "nickname" : "#(username)"
       }
       """
 
-    Given url 'https://jsonplaceholder.typicode.com/users'
-    And request user
+    Given path '/user/signup'
+      And request signinReq
     When method post
-    Then status 201
+    Then status 200
 
-    * def id = response.id
-    * print 'created id is: ', id
+    * def loginReq =
+      """
+      {
+        "email" : "#(email)",
+        "password" : "Testing123",
+      }
+      """
 
-    Given path id
-    # When method get
-    # Then status 200
-    # And match response contains user
-  
+    Given path '/user/login'
+      And request loginReq 
+    When method post
+    Then status 200
