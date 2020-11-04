@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="examples.ExamplesTest" time="1.991" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="12"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker\target\test-classes;C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker\target\classes;C:\Users\vince\.m2\repository\com\intuit\karate\karate-apache\0.9.6\karate-apache-0.9.6.jar;C:\Users\vince\.m2\repository\com\intuit\karate\karate-core\0.9.6\karate-core-0.9.6.jar;C:\Users\vince\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\vince\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\vince\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\vince\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\vince\.m2\repository\info\cukes\cucumber-java\1.2.5\cucumber-java-1.2.5.jar;C:\Users\vince\.m2\repository\info\cukes\cucumber-core\1.2.5\cucumber-core-1.2.5.jar;C:\Users\vince\.m2\repository\org\yaml\snakeyaml\1.24\snakeyaml-1.24.jar;C:\Users\vince\.m2\repository\de\siegmar\fastcsv\1.0.3\fastcsv-1.0.3.jar;C:\Users\vince\.m2\repository\info\picocli\picocli\4.0.3\picocli-4.0.3.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpclient\4.5.12\httpclient-4.5.12.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\vince\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpmime\4.5.12\httpmime-4.5.12.jar;C:\Users\vince\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\vince\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\vince\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\vince\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\vince\.m2\repository\com\intuit\karate\karate-junit5\0.9.6\karate-junit5-0.9.6.jar;C:\Users\vince\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.0\junit-jupiter-api-5.5.0.jar;C:\Users\vince\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\vince\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\vince\.m2\repository\org\junit\platform\junit-platform-commons\1.5.0\junit-platform-commons-1.5.0.jar;C:\Users\vince\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.0\junit-jupiter-engine-5.5.0.jar;C:\Users\vince\.m2\repository\org\junit\platform\junit-platform-engine\1.5.0\junit-platform-engine-1.5.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="12"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-12.0.2\bin"/>
+    <property name="sun.java.command" value="C:\cygwin\tmp\surefire10150882267043797530\surefirebooter7218039030258911682.jar C:\cygwin\tmp\surefire10150882267043797530 2020-11-04T13-57-03_786-jvmRun1 surefire1694300143509164299tmp surefire_04481770540406411647tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker\target\test-classes;C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker\target\classes;C:\Users\vince\.m2\repository\com\intuit\karate\karate-apache\0.9.6\karate-apache-0.9.6.jar;C:\Users\vince\.m2\repository\com\intuit\karate\karate-core\0.9.6\karate-core-0.9.6.jar;C:\Users\vince\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\vince\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\vince\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\vince\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\vince\.m2\repository\info\cukes\cucumber-java\1.2.5\cucumber-java-1.2.5.jar;C:\Users\vince\.m2\repository\info\cukes\cucumber-core\1.2.5\cucumber-core-1.2.5.jar;C:\Users\vince\.m2\repository\org\yaml\snakeyaml\1.24\snakeyaml-1.24.jar;C:\Users\vince\.m2\repository\de\siegmar\fastcsv\1.0.3\fastcsv-1.0.3.jar;C:\Users\vince\.m2\repository\info\picocli\picocli\4.0.3\picocli-4.0.3.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpclient\4.5.12\httpclient-4.5.12.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\vince\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\vince\.m2\repository\org\apache\httpcomponents\httpmime\4.5.12\httpmime-4.5.12.jar;C:\Users\vince\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\vince\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\vince\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\vince\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\vince\.m2\repository\com\intuit\karate\karate-junit5\0.9.6\karate-junit5-0.9.6.jar;C:\Users\vince\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.0\junit-jupiter-api-5.5.0.jar;C:\Users\vince\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\vince\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\vince\.m2\repository\org\junit\platform\junit-platform-commons\1.5.0\junit-platform-commons-1.5.0.jar;C:\Users\vince\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.0\junit-jupiter-engine-5.5.0.jar;C:\Users\vince\.m2\repository\org\junit\platform\junit-platform-engine\1.5.0\junit-platform-engine-1.5.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\vince"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2019-07-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-12.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\cygwin\tmp\surefire10150882267043797530\surefirebooter7218039030258911682.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="12.0.2+10"/>
+    <property name="user.name" value="vince"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\vince\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\cygwin\tmp\"/>
+    <property name="java.version" value="12.0.2"/>
+    <property name="user.dir" value="C:\Users\vince\Documents\Vincent\programmation\habits-tracker\api.tests\habitstracker"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-12.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\cygwin\usr\local\bin;C:\cygwin\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python38\Scripts;C:\Python38;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\ffmpeg\bin;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Android;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\vince\AppData\Local\Microsoft\WindowsApps;C:\Users\vince\AppData\Roaming\npm;C:\Users\vince\AppData\Local\GitHubDesktop\bin;C:\Users\vince\AppData\Local\Microsoft\WindowsApps;E:\Windows10\Program files\IntelliJ IDEA Community Edition 2020.2.3\bin;E:\Windows10\Program files\apache-maven-3.6.3\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="12.0.2+10"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="56.0"/>
+  </properties>
+  <testcase name="testAll[1][1]" classname="examples.ExamplesTest" time="1.114"/>
+  <testcase name="testAll[1][2]" classname="examples.ExamplesTest" time="0.141"/>
+</testsuite>
