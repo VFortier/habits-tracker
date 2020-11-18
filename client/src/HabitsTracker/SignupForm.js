@@ -1,4 +1,6 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 
 class SignupForm extends React.Component {
@@ -43,24 +45,37 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <>
-        <h2>Sign Up</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Email:
-            <input type="text" value={this.state.value} onChange={this.handleEmailChange} />
-          </label><br />
-          <label>
-            Password:
-            <input type="text" value={this.state.password} onChange={this.handlePasswordChange} />
-          </label><br />
-          <label>
-            Retype password:
-            <input type="text" value={this.state.password} onChange={this.handlePasswordChange} />
-          </label><br />
-          <input type="submit" value="Sign Up" />
-        </form>
-      </>
+      <React.Fragment>
+        <Form>
+          <h2>Sign Up</h2>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Nickname</Form.Label>
+            <Form.Control type="Nickname" placeholder="Enter nickname" />
+            <Form.Text className="text-muted">
+              This nickname will only displayed to you.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicRetypePassword">
+            <Form.Label>Retype Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Sign Up
+          </Button>
+        </Form>
+      </React.Fragment>
     );
   }
 }
