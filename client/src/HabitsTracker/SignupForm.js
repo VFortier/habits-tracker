@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,10 +52,14 @@ class LoginForm extends React.Component {
           Password:
           <input type="text" value={this.state.password} onChange={this.handlePasswordChange} />
         </label>
-        <input type="submit" value="Login" />
+        <label>
+          Retype password:
+          <input type="text" value={this.state.password} onChange={this.handlePasswordChange} />
+        </label>
+        <input type="submit" value="Sign Up" />
       </form>
     );
   }
 }
 
-export default LoginForm;
+export default SignupForm;

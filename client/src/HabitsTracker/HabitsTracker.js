@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import LoginForm from './LoginForm';
+import HabitsLandingPage from './HabitsLandingPage';
 
 class HabitsTracker extends Component {
+  // TODO - Return the actual app if the user is already logged in
   render() {
     return (
       <>
-          <h1>Habits Tracker Login</h1>
-          <LoginForm></LoginForm>
+          <HabitsLandingPage></HabitsLandingPage>
       </>
     );
   }

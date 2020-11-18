@@ -14,7 +14,6 @@ import './App.css';
 export default function App() {
   return (
     <Container fluid="xl" class="bg-dark text-light no-padding">
-      <p>woof</p>
       <Router>
           <Switch>
             <Route path="/habits-tracker">
