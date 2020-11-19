@@ -8,7 +8,7 @@ function DevIntro() {
   return (
     <Row className="DevIntro">
 
-      <Col class="text-center align-middle">Intro text here</Col>
+      <Col className="text-center align-middle">Intro text here</Col>
     </Row>
   );
 }

@@ -5,7 +5,7 @@ import Body from './Body';
 
 function Frontpage() {
   return (
-    <div className="App" class="bg-dark text-light">
+    <div className="App bg-dark text-light">
       <Header></Header>
       <Body></Body>
     </div>

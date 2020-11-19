@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 
 function Header() {
   return (
-    <header className="Header" class="border-bottom border-light">
+    <header className="Header border-bottom border-light">
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">Eccentric Vertices</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

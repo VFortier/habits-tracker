@@ -50,12 +50,16 @@ class SignupForm extends React.Component {
           <h2>Sign Up</h2>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control 
+              type="email"
+              placeholder="Enter email" />
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Nickname</Form.Label>
-            <Form.Control type="Nickname" placeholder="Enter nickname" />
+            <Form.Control
+              type="Nickname"
+              placeholder="Enter nickname" />
             <Form.Text className="text-muted">
               This nickname will only displayed to you.
             </Form.Text>
@@ -63,12 +67,16 @@ class SignupForm extends React.Component {
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control 
+              type="password"
+              placeholder="Password" />
           </Form.Group>
 
           <Form.Group controlId="formBasicRetypePassword">
             <Form.Label>Retype Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control 
+              type="password"
+              placeholder="Password" />
           </Form.Group>
 
           <Button variant="primary" type="submit">

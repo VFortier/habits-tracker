@@ -13,7 +13,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <Container fluid="xl" class="bg-dark text-light no-padding">
+    <Container fluid="xl" class-name="bg-dark text-light no-padding">
       <Router>
           <Switch>
             <Route path="/habits-tracker">
