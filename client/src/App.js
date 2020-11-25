@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 
-import HabitsTracker from './HabitsTracker/HabitsTracker';
+import HabitsTracker from './components/HabitsTracker';
 
 import './App.css';
 
