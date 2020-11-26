@@ -1,7 +1,8 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
+
+import AuthService from "../services/auth.service"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class LoginForm extends React.Component {
     let email = this.state.email;
     let password = this.state.password;
 
-    axios
+    AuthService.login(email, password);
+    /*axios
       .post("/user/login", {
         email,
         password
@@ -39,7 +41,7 @@ class LoginForm extends React.Component {
         }
 
         alert(response.data);
-      });
+      });*/
     event.preventDefault();
   }
 
