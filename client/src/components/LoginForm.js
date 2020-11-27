@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
+      message: '',
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -29,7 +30,18 @@ class LoginForm extends React.Component {
     let email = this.state.email;
     let password = this.state.password;
 
-    AuthService.login(email, password);
+    AuthService.login(email, password).then(
+      () => {
+        window.location.reload();
+      },
+      error => {
+        // TODO specific handle errors depending on what the API can return
+
+        this.setState({
+          message: error.toString(),
+        });
+      }
+    );
 
     event.preventDefault();
   }
@@ -56,6 +68,12 @@ class LoginForm extends React.Component {
               value={this.state.password}
               onChange={this.handlePasswordChange} />
           </Form.Group>
+
+
+          <p className="text-danger">
+            {this.state.message}
+          </p>
+          
 
           <Button variant="primary" type="submit">
             Login
