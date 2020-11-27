@@ -6,7 +6,7 @@ import AuthService from "../services/auth.service"
 
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       email: '',
       password: '',
@@ -30,18 +30,7 @@ class LoginForm extends React.Component {
     let password = this.state.password;
 
     AuthService.login(email, password);
-    /*axios
-      .post("/user/login", {
-        email,
-        password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
 
-        alert(response.data);
-      });*/
     event.preventDefault();
   }
 

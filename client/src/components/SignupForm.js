@@ -3,16 +3,21 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 
+import AuthService from "../services/auth.service"
+
 class SignupForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       email: '',
       password: '',
+      nickname: '',
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleNicknameChange = this.handleNicknameChange.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -24,42 +29,41 @@ class SignupForm extends React.Component {
     this.setState({password: event.target.value});
   }
 
+  handleNicknameChange(event) {
+    this.setState({nickname: event.target.value});
+  }
+
   handleSubmit(event) {
     let email = this.state.email;
     let password = this.state.password;
+    let nickname = this.state.nickname;
 
-    axios
-      .post("/user/login", {
-        email,
-        password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
+    AuthService.signup(nickname, email, password);
 
-        alert(response.data);
-      });
     event.preventDefault();
   }
 
   render() {
     return (
       <React.Fragment>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <h2>Sign Up</h2>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control 
               type="email"
-              placeholder="Enter email" />
+              placeholder="Enter email"
+              value={this.state.email}
+              onChange={this.handleEmailChange} />
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Nickname</Form.Label>
             <Form.Control
               type="Nickname"
-              placeholder="Enter nickname" />
+              placeholder="Enter nickname"
+              value={this.state.nickname}
+              onChange={this.handleNicknameChange} />
             <Form.Text className="text-muted">
               This nickname will only displayed to you.
             </Form.Text>
@@ -69,7 +73,9 @@ class SignupForm extends React.Component {
             <Form.Label>Password</Form.Label>
             <Form.Control 
               type="password"
-              placeholder="Password" />
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handlePasswordChange} />
           </Form.Group>
 
           <Form.Group controlId="formBasicRetypePassword">

@@ -18,6 +18,14 @@ class AuthService {
       });
   }
 
+  signup(nickname, email, password) {
+    return axios.post(config.API_URL + "/user/signup", {
+      nickname,
+      email,
+      password
+    });
+  }
+
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));;
   }
