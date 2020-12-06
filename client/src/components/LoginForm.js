@@ -36,7 +36,6 @@ class LoginForm extends React.Component {
       },
       error => {
         // TODO specific handle errors depending on what the API can return
-
         this.setState({
           message: error.toString(),
         });

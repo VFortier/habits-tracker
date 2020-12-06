@@ -22,6 +22,11 @@ class HabitsTracker extends Component {
     }
   }
 
+  handleClickLogout() {
+    AuthService.logout();
+    window.location.reload();
+  }
+
   render() {
     const currentUser = this.state.currentUser;
 
@@ -30,7 +35,14 @@ class HabitsTracker extends Component {
       	{!currentUser ? (
           <HabitsLandingPage></HabitsLandingPage>
         ) : (
-          <p>You are logged in </p>
+          <div>
+            <p>You are logged in </p>
+            
+            <input 
+              type="button"
+              value="logout"
+              onClick={() => this.handleClickLogout()} />
+          </div>
         )}
       </React.Fragment>
     );

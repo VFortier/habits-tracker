@@ -29,6 +29,10 @@ class AuthService {
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));;
   }
+
+  logout() {
+    localStorage.removeItem("user");
+  }
 }
 
 export default new AuthService();
