@@ -3,7 +3,6 @@ import config from '../config/config';
 
 class AuthService {
   login(email, password) {
-  	console.log(email + password);
     return axios
       .post(config.API_URL + "/user/login", {
         email,

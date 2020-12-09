@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       nickname: '',
+      message: '',
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -37,7 +38,36 @@ class SignupForm extends React.Component {
     let password = this.state.password;
     let nickname = this.state.nickname;
 
-    AuthService.signup(nickname, email, password);
+    AuthService.signup(nickname, email, password).then(
+      () => {
+        // TODO - Login user upon successful signup
+        window.location.reload();
+      },
+      error => {
+        let errType = error.response.data.errType;
+
+        if (error.response.status === 400 && errType === "EMAIL_ALREADY_EXISTS") {
+          this.setState({
+            message: "This email is already used by another account",
+          });
+        } else if (error.response.status === 400 && errType === "INVALID_REQUEST") {
+          // This is more of a fallback and shouldn't be executed.
+          // If invalid information is provided, the request to create an account shouldn't be sent by the frontend
+          // in the first place.
+          this.setState({
+            message: "Invalid information provided to create the account",
+          });
+        } else if (error.response.status === 500) {
+          this.setState({
+            message: "Technical error, please try again later",
+          });
+        } else {
+          this.setState({
+            message: error.toString(),
+          });
+        }
+      }
+    );
 
     event.preventDefault();
   }
@@ -83,6 +113,10 @@ class SignupForm extends React.Component {
               type="password"
               placeholder="Password" />
           </Form.Group>
+          
+          <p className="text-danger">
+            {this.state.message}
+          </p>
 
           <Button variant="primary" type="submit">
             Sign Up

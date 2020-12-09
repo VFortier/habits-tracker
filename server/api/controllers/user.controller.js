@@ -13,7 +13,8 @@ exports.signup = function(req, res) {
 
   if (!email || !pwd || !nickname) {
     res.status(400).send({
-      message: `Request body is missing one or more parameter(s)`
+      message: `Request body is missing one or more parameter(s)`,
+      errType: `INVALID_REQUEST`,
     });
     return;
   }
@@ -21,14 +22,16 @@ exports.signup = function(req, res) {
   User.findByEmail(email, (err, user) => {
     if (user != null) {
       res.status(400).send({
-        message: `A user with the email '${email}' already exists`
+        message: `A user with the email '${email}' already exists`,
+        errType: `EMAIL_ALREADY_EXISTS`,
       });
     } else {
       bcrypt.hash(pwd, authConfig.SALT_ROUNDS, (err, hash) => {
         User.add(email, hash, nickname, (err, user) => {
           if (err) {
             res.status(500).send({
-              message: `Error signing up in User`
+              message: `Error signing up in User`,
+              errType: `TECHNICAL_ERR`,
             });
           } else {
             res.send();

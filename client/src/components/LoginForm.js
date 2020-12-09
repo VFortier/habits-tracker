@@ -35,10 +35,19 @@ class LoginForm extends React.Component {
         window.location.reload();
       },
       error => {
-        // TODO specific handle errors depending on what the API can return
-        this.setState({
-          message: error.toString(),
-        });
+        if (error.response.status === 401) {
+          this.setState({
+            message: "The email and password you’ve entered doesn’t match any account",
+          });
+        } else if (error.response.status === 500) {
+          this.setState({
+            message: "Technical error, please try again later",
+          });
+        } else {
+          this.setState({
+            message: error.toString(),
+          });
+        }
       }
     );
 
@@ -68,12 +77,10 @@ class LoginForm extends React.Component {
               onChange={this.handlePasswordChange} />
           </Form.Group>
 
-
           <p className="text-danger">
             {this.state.message}
           </p>
           
-
           <Button variant="primary" type="submit">
             Login
           </Button>
